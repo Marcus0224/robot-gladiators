@@ -1,3 +1,9 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+// * Fight all enemy-robots
+// *Defeat each enemy-robot
+//"LOSE" - Player robots's health is zero or less
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -6,11 +12,17 @@ var playerMoney = 10;
 // Yuo can also log multiple values at one liek this
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Ana Norales"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[3]);
+
+ var fight = function(enemyName) {
+    ...// fight function statements
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
     // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -59,5 +71,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     window.alert("You need to choose a valid option. Try again!");
   }
 }
-fight();
+for (var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
 
